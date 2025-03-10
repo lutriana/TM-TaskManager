@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas - TaskManager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .task-completed {
+            background-color: #e8f5e9;
+        }
+        .task-pending {
+            background-color: #fff8e1;
+        }
+        .task-overdue {
+            background-color: #ffebee;
+        }
+        .badge-status {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">TaskManager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Mis Tareas</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <span class="nav-item nav-link text-light">Usuario: ejemplo@correo.com</span>
+                    <a class="nav-link" href="../auth/logout.html">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Mis Tareas</h1>
+            <a href="./create.html" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Nueva tarea
+            </a>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <div class="row">
+                    <div class="col-md-5"><strong>Título</strong></div>
+                    <div class="col-md-2"><strong>Fecha límite</strong></div>
+                    <div class="col-md-2"><strong>Estado</strong></div>
+                    <div class="col-md-3"><strong>Acciones</strong></div>
+                </div>
+            </div>
+            <div class="list-group list-group-flush">
+                <!-- Tarea Completada -->
+                <div class="list-group-item task-completed">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <h5 class="mb-1">Preparar presentación del proyecto</h5>
+                            <p class="mb-1 text-muted">Crear diapositivas para la presentación del proyecto final incluyendo objetivos, resultados y conclusiones.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <small>15/03/2025</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-success badge-status">Completada</span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group btn-group-sm">
+                                <a href="./edit.html?id=1" class="btn btn-outline-primary">Editar</a>
+                                <a href="./view.html?id=1" class="btn btn-outline-info">Ver</a>
+                                <button class="btn btn-outline-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarea Pendiente -->
+                <div class="list-group-item task-pending">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <h5 class="mb-1">Revisión de código</h5>
+                            <p class="mb-1 text-muted">Realizar revisión del código del módulo de autenticación y solucionar problemas detectados.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <small>20/03/2025</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-warning text-dark badge-status">Pendiente</span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group btn-group-sm">
+                                <a href="./edit.html?id=2" class="btn btn-outline-primary">Editar</a>
+                                <a href="./view.html?id=2" class="btn btn-outline-info">Ver</a>
+                                <button class="btn btn-outline-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarea Vencida -->
+                <div class="list-group-item task-overdue">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <h5 class="mb-1">Enviar informe mensual</h5>
+                            <p class="mb-1 text-muted">Compilar estadísticas de uso y preparar el informe mensual para el equipo directivo.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <small>01/03/2025</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-danger badge-status">Vencida</span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group btn-group-sm">
+                                <a href="./edit.html?id=3" class="btn btn-outline-primary">Editar</a>
+                                <a href="./view.html?id=3" class="btn btn-outline-info">Ver</a>
+                                <button class="btn btn-outline-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarea Pendiente (2) -->
+                <div class="list-group-item task-pending">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <h5 class="mb-1">Actualizar documentación API</h5>
+                            <p class="mb-1 text-muted">Actualizar la documentación de la API con los nuevos endpoints y parámetros.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <small>10/04/2025</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-warning text-dark badge-status">Pendiente</span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group btn-group-sm">
+                                <a href="./edit.html?id=4" class="btn btn-outline-primary">Editar</a>
+                                <a href="./view.html?id=4" class="btn btn-outline-info">Ver</a>
+                                <button class="btn btn-outline-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarea Pendiente (3) -->
+                <div class="list-group-item task-pending">
+                    <div class="row align-items-center">
+                        <div class="col-md-5">
+                            <h5 class="mb-1">Implementar nueva funcionalidad</h5>
+                            <p class="mb-1 text-muted">Desarrollar la funcionalidad de exportación de tareas a formato CSV y PDF.</p>
+                        </div>
+                        <div class="col-md-2">
+                            <small>15/04/2025</small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-warning text-dark badge-status">Pendiente</span>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group btn-group-sm">
+                                <a href="./edit.html?id=5" class="btn btn-outline-primary">Editar</a>
+                                <a href="./view.html?id=5" class="btn btn-outline-info">Ver</a>
+                                <button class="btn btn-outline-danger">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Resumen</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">1</h5>
+                                <p class="card-text">Completadas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-dark bg-warning mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">3</h5>
+                                <p class="card-text">Pendientes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-danger mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">1</h5>
+                                <p class="card-text">Vencidas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">5</h5>
+                                <p class="card-text">Total</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">© 2025 TaskManager - Gestiona tus tareas de forma eficiente</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
