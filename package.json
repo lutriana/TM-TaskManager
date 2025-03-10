@@ -1,0 +1,26 @@
+{
+  "name": "ah-taskmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker-compose build",
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
+    "dev": "flask run --host=0.0.0.0 --port=8023"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lutriana/TM-TaskManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lutriana/TM-TaskManager/issues"
+  },
+  "homepage": "https://github.com/lutriana/TM-TaskManager#readme"
+}
